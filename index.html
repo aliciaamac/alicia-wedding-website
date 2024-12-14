@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link href="/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script async src="https://tally.so/widgets/embed.js"></script>
     <script>
@@ -26,10 +27,23 @@
     </script>
     <title>Alicia & Zack Wedding 2025</title>
   </head>
+  <div class="loading">
+    <div class="loader"></div>
+  </div>
   <body>
+    <img
+      loading="lazy"
+      class="background"
+      src="/images/background.jpg"
+      alt=""
+    />
     <div class="header">
       <div class="left">
-        <h1>Alicia + Zack</h1>
+        <h1>
+          <div>Alicia</div>
+          <div class="and">+</div>
+          <div>Zack</div>
+        </h1>
         <h2>October 11th, 2025</h2>
         <hr />
         <div class="subtitle">
@@ -76,7 +90,7 @@
           <div class="typewriter">
             We are still working out the details for a hotel block.
           </div>
-          <h4>Parking and transportation</h4>
+          <h4>Parking and Transportation</h4>
           <div class="typewriter">
             Overnight parking is available onsite. Uber and taxis also serve the
             area, which is about 15 minutes from Barrie.
@@ -100,7 +114,8 @@
       647-300-3837
     </div>
     <div id="countdown">
-      Happily Ever After
+      <img src="/images/stamp.png" alt="" />
+      <span>Happily Ever After</span>
       <div>
         <span id="days"></span>
         <div>days</div>
@@ -119,5 +134,6 @@
       </div>
     </div>
   </body>
+  <script src="/loading.js"></script>
   <script src="/timer.js"></script>
 </html>

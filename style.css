@@ -31,10 +31,16 @@
 }
 
 h1 {
+  display: flex;
   font-family: "Aniyah";
   font-size: 3.5rem;
   line-height: 6rem;
   margin: 0;
+
+  .and {
+    margin-right: -1.5rem;
+    margin-left: 0.5rem;
+  }
 }
 
 h2 {
@@ -64,7 +70,6 @@ body {
   font-family: "Anaktoria";
   color: var(--gold-500);
   background: black;
-  background: url('/images/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -73,10 +78,20 @@ body {
   font-weight: 300;
 }
 
+.background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.7;
+}
+
 .header {
   display: flex;
   text-align: center;
   gap: 1rem;
+  overflow: hidden;
 
   hr {
     width: 70%;
@@ -91,6 +106,42 @@ body {
   justify-content: center;
   align-items: center;
   flex: 1;
+}
+
+.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  left: 0;
+  top: 0;
+  gap: 1rem;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid var(--gold-500);
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes wiggle {
@@ -113,6 +164,7 @@ body {
 
 .frame {
   animation: wiggle 10s infinite;
+  max-width: 75%;
 }
 
 .anaktoria {
@@ -222,7 +274,11 @@ body {
   font-size: 3rem;
   gap: 1.5rem;
   margin-top: 1rem;
-  color: var(--gold-800);
+  color: var(--gold-700);
+
+  img {
+    width: 5rem;
+  }
 
   > div {
     color: var(--gold-400);
@@ -245,21 +301,30 @@ body {
   }
 }
 
-
 @media (max-width: 940px) {
+  h1 {
+    font-size: 3rem;
+  }
+
   .header {
     flex-direction: column;
   }
 
   #countdown {
     flex-wrap: wrap;
+    text-align: center;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
   }
 
   .body {
     .book {
       display: none;
     }
-  
+
     .wedding-details {
       --text-color: var(--gold-500);
       position: static;
@@ -274,7 +339,7 @@ body {
         h3 {
           font-size: 5rem;
         }
-  
+
         h4 {
           font-size: 2.2rem;
           margin-top: 1rem;
@@ -290,14 +355,60 @@ body {
           font-size: 1.5rem;
 
           img {
-            display: none;
+            background: rgba(255, 239, 194);
+            padding: 1rem;
+            border-radius: 3rem;
           }
         }
 
         .frills {
           font-size: 1.5rem;
           padding: 5.5rem;
+          width: 150%;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  h1 {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  #countdown {
+    font-size: 2rem;
+
+    span {
+      flex: 100%;
+    }
+  }
+
+  hr {
+    width: 150% !important;
+  }
+
+  .body {
+    margin-top: 1rem;
+
+    .wedding-details .page {
+      a {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+      }
+
+      h3 {
+        font-size: 3.5rem;
       }
     }
   }
